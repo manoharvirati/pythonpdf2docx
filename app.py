@@ -15,7 +15,7 @@ app.config['UPLOADER_FOLDER']=UPLOADER_FOLDER
 @app.route('/index',methods=['GET','POST'])
 def index():
     if request.method == "POST":
-        pythoncom.CoInitialize()
+        #pythoncom.CoInitialize()
 
         file=request.files['filename']
         if file.filename !='':
