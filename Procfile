@@ -1,1 +1,1 @@
-gunicorn --log-file=- onbytes.wsgi:app
+web gunicorn app:app
