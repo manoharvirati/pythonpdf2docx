@@ -1,3 +1,2 @@
 flask
 gunicorn
-pywin32
