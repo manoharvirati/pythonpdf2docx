@@ -1,9 +1,9 @@
 from flask import Flask
 from flask import request,render_template,redirect,url_for,send_file
 import os
-import win32com.client
-import pythoncom
-pythoncom.CoInitialize()
+#import win32com.client
+#import pythoncom
+#pythoncom.CoInitialize()
 
 UPLOADER_FOLDER=''
 AllOWED_EXTENSIONS={'docx'}
@@ -27,11 +27,11 @@ def index():
 
         #inputFile = os.path.abspath(r"C:\Users\mvirati\Downloads\fie.docx")
         outputFile = os.path.abspath(r"document.pdf")
-        word = win32com.client.Dispatch('Word.Application')
-        doc = word.Documents.Open(file.filename)
-        doc.SaveAs(outputFile, FileFormat=wdFormatPDF)
-        doc.Close()
-        word.Quit()
+        #word = win32com.client.Dispatch('Word.Application')
+        #doc = word.Documents.Open(file.filename)
+        #doc.SaveAs(outputFile, FileFormat=wdFormatPDF)
+        #doc.Close()
+        #word.Quit()
         return render_template("pdf.html")
         #return send_file("document.pdf", as_attachment=True)
 
@@ -40,7 +40,8 @@ def index():
 @app.route('/pdf',methods=['GET','POST'])
 def pdf():
     if request.method =="GET":
-       return send_file("document.pdf",as_attachment=True)
+        return send_file(file.filename,as_attachment=True)
+       #return send_file("document.pdf",as_attachment=True)
     print('wrong')
 if __name__ == "__main__":
     app.debug=True
