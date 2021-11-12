@@ -5,6 +5,7 @@ from docx2pdf import convert
 from pdf2docx import parse
 from typing import Tuple
 import sys
+import _tkinter
 
 #import win32com.client
 #import pythoncom
