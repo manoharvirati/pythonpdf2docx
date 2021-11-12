@@ -1,3 +1,5 @@
 flask
 gunicorn
 docx2pdf
+pdf2docx
+typing
